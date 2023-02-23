@@ -19,6 +19,8 @@ def example_view(request, format=None):
 
 
 @api_view(['POST'])
+@authentication_classes([])
+@permission_classes([])
 def login(request, format=None):
   login_data = json.loads(request.body)
   try:

@@ -20,6 +20,7 @@ class CustomAuthentication(authentication.BaseAuthentication):
           return (token.user, None)
         else:
           print("2?")
+          token.delete()
           error_msg = "Token has expired"
       except Token.DoesNotExist:
         error_msg = "Token doesn't exists"
